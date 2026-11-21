@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Captionista Outfit Captions</title>
+<meta name="description" content="Pick your outfit and get Instagram captions, hashtags and song ideas for sarees, lehengas, kurtis, party dresses and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, playful, confident — a friend who always knows what to post.
+   IDEA: a fashion editor's mood board: pick the look, get the post written.
+   PICTURE: a live Instagram-style post card showing her outfit photo with the chosen caption and tags.
+   COLOUR and TYPE: berry #6d1a3f leads, blush ground, marigold accent; DM Serif Display titles, DM Sans text.
+   LAYOUT: berry title band; controls left, post card and results right; stacks on phones. */
+:root{color-scheme:light dark;--bg:light-dark(#fff4f7,#170a10);--ink:light-dark(#2a0f1c,#f8e8ef);--mut:light-dark(#7a5363,#c9a3b3);--card:light-dark(#ffffff,#24121b);--line:light-dark(#f1d3de,#3b2130);--berry:#6d1a3f;--bi:light-dark(#6d1a3f,#ff8fbf);--gold:#f2a516;--soft:light-dark(#fde2ec,#3a1a29)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "DM Sans",system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(20px,3.5vw,48px) max(4vw,14px)}
+.wrap{max-width:1240px;margin:0 auto}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
+.top{background:var(--berry);color:#fff}
+.top h1{font-size:clamp(34px,5.5vw,52px)}
+.top p{margin:.5em 0 0;max-width:60ch;color:#ffd9e6}
+h2{font-size:26px;margin-bottom:12px}
+h3{font-size:19px;margin:18px 0 8px}
+.lay{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.ctl{position:sticky;top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 15px "DM Sans",sans-serif;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--berry);border-color:var(--berry);color:#fff}
+.chip:focus-visible,.btn:focus-visible,.sw:focus-visible,.cap:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sws{display:flex;flex-wrap:wrap;gap:10px}
+.sw{width:44px;height:44px;border-radius:50%;border:3px solid var(--card);outline:1px solid var(--line);cursor:pointer;padding:0}
+.sw[aria-pressed=true]{outline:3px solid var(--bi)}
+.up{display:flex;gap:12px;align-items:center;border:2px dashed var(--line);border-radius:14px;padding:12px;cursor:pointer}
+.up input{position:absolute;opacity:0;width:1px;height:1px}
+.up img{width:56px;height:56px;border-radius:10px;object-fit:cover;flex:none;background:var(--soft)}
+.up b{display:block}.up small{color:var(--mut);font-size:14px}
+.det{font-size:14px;color:var(--mut);margin:8px 0 0}
+.btn{font:700 15px "DM Sans",sans-serif;min-height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none}
+.pri{background:var(--berry);border-color:var(--berry);color:#fff}
+.post{max-width:440px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 40px -22px rgba(109,26,63,.45)}
+.ph{display:flex;align-items:center;gap:10px;padding:10px 14px;font-weight:700;font-size:14px}
+.av{width:32px;height:32px;border-radius:50%;background:conic-gradient(from 200deg,var(--gold),#e83e8c,var(--berry),var(--gold));padding:2px}
+.av i{display:block;width:100%;height:100%;border-radius:50%;background:var(--soft);border:2px solid var(--card)}
+.shot{aspect-ratio:4/5;background:var(--soft);position:relative;overflow:hidden}
+.shot img,.shot svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pc{padding:12px 14px 16px;font-size:15px}
+.pc .ic{display:flex;gap:14px;margin-bottom:8px}
+.pc .ic svg{width:24px;height:24px}
+.pc p{margin:0;white-space:pre-line}
+.pc .tg{color:light-dark(#1d4ed8,#8ab4ff)}
+.music{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:0 14px 10px;color:var(--mut)}
+.res{display:grid;gap:18px}
+.caps{display:grid;gap:8px}
+.cap{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:8px 8px 8px 14px;cursor:pointer;text-align:left;font:16px/1.4 "DM Sans",sans-serif;color:var(--ink);width:100%}
+.cap[aria-pressed=true]{border-color:var(--bi);background:var(--soft)}
+.cap span{flex:1}
+.cp{font:700 13px "DM Sans",sans-serif;min-height:36px;padding:0 12px;border-radius:10px;border:0;background:var(--berry);color:#fff;cursor:pointer;flex:none}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:500 14px "DM Sans",sans-serif;min-height:36px;padding:0 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--mut);cursor:pointer;text-decoration:line-through}
+.tag[aria-pressed=true]{color:light-dark(#1d4ed8,#8ab4ff);text-decoration:none;border-color:light-dark(#c9d6fb,#2a3b66)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.cnt{font-size:14px;color:var(--mut)}
+.songs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.songs li{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:8px 10px}
+.disc{width:40px;height:40px;border-radius:50%;flex:none;background:radial-gradient(circle,var(--card) 0 5px,var(--berry) 6px 100%);box-shadow:inset 0 0 0 6px rgba(255,255,255,.08)}
+.songs .t{flex:1}.songs b{display:block;line-height:1.25}.songs small{color:var(--mut);font-size:14px}
+.songs a{font:700 13px "DM Sans",sans-serif;min-height:36px;padding:0 10px;border-radius:10px;border:1px solid var(--line);display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;white-space:nowrap}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.hd h2{margin:0}
+.note{font-size:14px;color:var(--mut);margin:10px 0 0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:9;max-width:calc(100vw - 32px)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+footer{color:var(--mut);font-size:14px;text-align:center;padding:10px 16px 34px}
+@media(max-width:860px){.lay{grid-template-columns:minmax(0,1fr)}.ctl{position:static}}
+@media(max-width:600px){.panel{padding:14px;border-radius:14px}.chip{font-size:14px;padding:0 12px}.songs a{padding:0 8px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top band"><div class="wrap">
+  <h1>Captionista</h1>
+  <p>Tell us what you're wearing. Get captions, hashtags and song ideas for your post in seconds.</p>
+</div></header>
+
+<main class="band"><div class="wrap lay">
+  <section class="panel ctl" aria-label="Your outfit">
+    <label class="up" for="photo"><img id="thumb" alt=""><span><b>Add your outfit photo</b><small>Optional. We'll read the main colour. The photo stays on your phone.</small></span><input id="photo" type="file" accept="image/*"></label>
+    <p class="det" id="det" hidden></p>
+    <h3>Outfit</h3><div class="chips" id="cOutfit"></div>
+    <h3>Occasion</h3><div class="chips" id="cOcc"></div>
+    <h3>Main colour</h3><div class="sws" id="cColor"></div>
+    <h3>Vibe</h3><div class="chips" id="cVibe"></div>
+    <h3>Caption language</h3><div class="chips" id="cLang"></div>
+  </section>
+
+  <section class="res" aria-live="polite">
+    <div class="post" aria-label="Post preview">
+      <div class="ph"><span class="av"><i></i></span>your_username</div>
+      <div class="music"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 18V6l11-2v12a3 3 0 1 1-2-2.8V7.4L11 8.7V18a3 3 0 1 1-2-2.8z"/></svg><span id="pMusic"></span></div>
+      <div class="shot" id="shot"></div>
+      <div class="pc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 3L10 14M22 3l-7 18-4-8-8-4z"/></svg></div>
+        <p><b>your_username</b> <span id="pCap"></span></p>
+        <p class="tg" id="pTags"></p>
+      </div>
+    </div>
+    <div class="row" style="justify-content:center;margin-top:0"><button class="btn pri" id="copyAll">Copy caption + hashtags</button></div>
+
+    <div class="panel">
+      <div class="hd"><h2>Captions</h2><button class="btn" id="more">Show more ideas</button></div>
+      <div class="caps" id="caps" style="margin-top:12px"></div>
+    </div>
+
+    <div class="panel">
+      <div class="hd"><h2>Hashtags</h2><span class="cnt" id="tCount"></span></div>
+      <p class="note" style="margin:0 0 10px">Tap a tag to drop it. Instagram allows up to 30.</p>
+      <div class="tags" id="tags"></div>
+      <div class="row"><button class="btn" id="copyTags">Copy hashtags</button></div>
+    </div>
+
+    <div class="panel">
+      <div class="hd"><h2>Songs for your reel</h2></div>
+      <div class="chips" id="cSong" style="margin:12px 0"></div>
+      <ul class="songs" id="songs"></ul>
+      <p class="note">Search the song in Instagram's audio picker when you post. Trending audio changes every week, so check the Reels tab too.</p>
+    </div>
+  </section>
+</div></main>
+<footer>Captionista · captions are original ideas to copy, edit and make your own.</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+{
+const $ = s => document.querySelector(s);
+const OUTFITS = [['saree','Saree'],['lehenga','Lehenga'],['kurti','Kurti / Suit'],['indo','Indo-western'],['dress','Party dress'],['casual','Jeans & tee'],['coord','Co-ord set'],['formal','Office wear'],['gym','Gym wear'],['beach','Beach wear']];
+const OCCS = [['wedding','Wedding'],['festival','Festival'],['party','Party'],['date','Date night'],['office','Office'],['college','College'],['vacation','Vacation'],['everyday','Everyday']];
+const VIBES = [['elegant','Elegant'],['bold','Bold'],['cute','Cute'],['desi','Desi'],['minimal','Minimal'],['boss','Boss']];
+const COLORS = [['red','Red','#c62828'],['pink','Pink','#ec5f9b'],['black','Black','#161616'],['white','White','#f7f7f2'],['pastel','Pastel','#cdb9f0'],['blue','Blue','#2b5bd7'],['green','Green','#2e8b57'],['yellow','Yellow','#f2c230'],['purple','Purple','#7b3fb5'],['gold','Gold','linear-gradient(135deg,#8a6414,#f7d77c,#a87a17)'],['multi','Multicolour','conic-gradient(#e53935,#fbc02d,#43a047,#1e88e5,#8e24aa,#e53935)']];
+const LANGS = [['en','English'],['hi','Hinglish too']];
+const SLANGS = [['all','All'],['hi','Bollywood & desi'],['pa','Punjabi'],['en','English']];
+
+const CAPS = `Six yards of grace, zero apologies.|saree elegant
+Saree not sorry.|saree bold
+Pleats on point, plans on hold.|saree cute
+Draped in {color}, wrapped in confidence.|saree elegant c
+Some stories are best told in six yards.|saree elegant
+Saree, sunshine and a little bit of sass.|saree cute
+Mummy ki saree, meri attitude.|saree desi hi
+Saree pehni hai, ab nazar mat lagana.|saree desi hi
+Twirl first, think later.|lehenga dress cute
+This lehenga came with its own background music.|lehenga wedding bold
+Main character energy, lehenga edition.|lehenga bold
+Shaadi kisi ki bhi ho, spotlight humari hai.|wedding lehenga hi bold
+Here for the food, stayed for the photos.|wedding any cute
+Baraat late hai, par look on time hai.|wedding hi
+Dressed for the pheras, ready for the dance floor.|wedding lehenga
+Kurti, kajal and calm.|kurti minimal desi
+Simple suit, loud heart.|kurti everyday
+Desi at heart, chai in hand.|kurti desi everyday
+Ethnic Friday, every day.|kurti office
+Thoda desi, thoda dil se.|kurti desi hi
+Diyas lit, look lit.|festival
+Festive mode on. Mithai mode also on.|festival cute
+Garba ready, twirl steady.|festival lehenga
+Tyohaar ka mood, outfit bhi good.|festival hi cute
+Old traditions, new twist.|indo festival
+Half desi, half diva, fully me.|indo bold desi
+East meets west, and they get along beautifully.|indo elegant
+Dressed for the party I'll leave first.|party dress cute
+Sequins, because subtle was never the plan.|party gold bold dress
+Little {color} dress, big plans.|dress party c
+Not lost, just fashionably late.|party any
+Dance floor ready, heels optional.|party dress
+Aaj ki raat, sirf glow ki baat.|party hi
+Jeans, tee and zero effort that took forty minutes.|casual cute
+Keeping it simple, keeping it me.|casual minimal everyday
+Comfort is the new couture.|casual coord minimal
+Weekend uniform, unlocked.|casual everyday
+Coffee first, outfit second, plans never.|casual everyday cute
+Simple si ladki, simple sa look.|casual hi minimal
+Late for class, early for the photo.|college cute
+Notes? No. Outfit? Yes.|college casual
+Matching set, matching mood.|coord cute
+Co-ords so I don't have to make decisions.|coord minimal
+Meetings at ten, slaying by nine.|office formal boss
+Dress for the job you want. I want all of them.|formal boss
+Blazer on, doubts off.|formal boss
+Monday, but make it fashion.|office formal
+Office mein kaam, outfit mein naam.|office hi boss
+Sweat now, sparkle later.|gym
+Matching set, unmatched energy.|gym coord bold
+Workout ho na ho, look toh banta hai.|gym hi cute
+Stronger than yesterday, cuter than ever.|gym cute
+Out of office, into the ocean.|beach vacation
+Sea breeze, easy please.|beach vacation minimal
+Packed light. Packed cute.|vacation cute
+Chhutti mode on, phone mode off.|vacation hi
+Sunkissed and slightly overdressed.|beach dress vacation
+Dressed up for dinner and a little bit of drama.|date dress
+He said casual. I heard couture.|date bold
+Date night, main character mood.|date bold
+Outfit {color}, mood romantic.|date hi c
+Wearing {color} like it owes me compliments.|any bold c
+{Color} is my personality today.|any cute c
+Black never goes out of style. Neither do I.|black boss bold
+All white, all right.|white minimal elegant
+Pink isn't a colour, it's an attitude.|pink cute
+Red alert: confidence levels rising.|red bold
+Pastels and peaceful days.|pastel cute minimal
+Gold-plated mood.|gold festival party
+Hello yellow, hello sunshine.|yellow cute
+Blue skies, bluer outfit.|blue casual
+Green with zero envy.|green
+Royal in purple, loyal to my style.|purple elegant
+Too many colours? Never heard of her.|multi bold
+Outfit check: passed with distinction.|any
+Confidence is my best accessory. The earrings help.|any desi
+Nazar na lage.|desi hi any
+Simplicity, but make it stunning.|minimal elegant any
+Grace in every step.|elegant any
+Soft heart, sharp outfit.|boss any
+Kya lag rahi hoon? Haan, pata hai.|hi bold any`.split('\n').map(l => { const [t,g] = l.split('|'); return {t, g:g.split(' ')}; });
+
+const SONGS = `Kesariya|Arijit Singh|hi|elegant date saree lehenga red
+Tum Kya Mile|Arijit Singh, Shreya Ghoshal|hi|saree elegant date
+What Jhumka?|Arijit Singh, Jonita Gandhi|hi|lehenga festival party bold
+Ghoomar|Shreya Ghoshal, Swaroop Khan|hi|lehenga festival elegant wedding
+Nagada Sang Dhol|Shreya Ghoshal, Osman Mir|hi|festival lehenga bold red
+Kajra Re|Alisha Chinai, Shankar Mahadevan, Javed Ali|hi|saree party bold
+Din Shagna Da|Jasleen Royal|hi|wedding lehenga elegant
+London Thumakda|Labh Janjua, Sonu Kakkar, Neha Kakkar|hi|wedding party cute
+Mehendi Laga Ke Rakhna|Lata Mangeshkar, Udit Narayan|hi|wedding desi
+Badtameez Dil|Benny Dayal, Shefali Alvares|hi|party dress casual bold
+Kala Chashma|Badshah, Neha Kakkar, Amar Arshi|hi|party bold black
+Ilahi|Arijit Singh|hi|vacation beach casual
+Iktara|Kavita Seth|hi|minimal kurti casual
+Chaleya|Arijit Singh, Shilpa Rao|hi|date saree elegant
+Heeriye|Jasleen Royal, Arijit Singh|hi|cute casual date pastel
+Satranga|Arijit Singh|hi|elegant red saree
+Kho Gaye Hum Kahan|Jasleen Royal, Prateek Kuhad|hi|casual minimal vacation
+Apna Bana Le|Arijit Singh|hi|date kurti desi
+Raataan Lambiyan|Jubin Nautiyal, Asees Kaur|hi|date kurti cute everyday
+Ude Dil Befikre|Benny Dayal|hi|vacation beach party
+Safarnama|Lucky Ali|hi|vacation minimal
+Zinda|Siddharth Mahadevan|hi|gym boss
+Jhoome Jo Pathaan|Arijit Singh, Sukriti Kakar|hi|party bold beach
+Malang Sajna|Sachet-Parampara|hi|indo festival cute
+Gulaabi Sadi|Sanju Rathod|hi|saree pink desi festival
+Lehanga|Jass Manak|pa|lehenga wedding cute
+Suit Suit|Guru Randhawa, Arjun|pa|kurti desi party
+Pasoori|Ali Sethi, Shae Gill|pa|indo festival bold
+Tauba Tauba|Karan Aujla|pa|party bold dress
+Softly|Karan Aujla|pa|casual boss black
+Brown Munde|AP Dhillon, Gurinder Gill, Shinda Kahlon|pa|boss casual bold
+Excuses|AP Dhillon, Gurinder Gill|pa|date casual
+Levitating|Dua Lipa|en|party dress cute
+Espresso|Sabrina Carpenter|en|casual cute college coord
+Flowers|Miley Cyrus|en|boss minimal everyday
+As It Was|Harry Styles|en|casual college
+Paint The Town Red|Doja Cat|en|red bold party
+Kill Bill|SZA|en|bold black
+Blinding Lights|The Weeknd|en|party gym
+Birds of a Feather|Billie Eilish|en|date pastel cute
+Die With A Smile|Lady Gaga, Bruno Mars|en|date elegant
+APT.|ROSÉ, Bruno Mars|en|party cute pink
+Run the World (Girls)|Beyoncé|en|boss formal office
+Girl on Fire|Alicia Keys|en|boss bold
+Watermelon Sugar|Harry Styles|en|beach vacation pastel
+Señorita|Shawn Mendes, Camila Cabello|en|beach date
+Perfect|Ed Sheeran|en|date wedding elegant white
+Stronger (What Doesn't Kill You)|Kelly Clarkson|en|gym boss
+Eye of the Tiger|Survivor|en|gym
+Good Luck, Babe!|Chappell Roan|en|bold pink
+Golden Hour|JVKE|en|gold elegant date
+Sunflower|Post Malone, Swae Lee|en|yellow casual
+Here Comes the Sun|The Beatles|en|yellow vacation
+Back to Black|Amy Winehouse|en|black elegant
+Lavender Haze|Taylor Swift|en|pastel minimal purple`.split('\n').map(l => { const [t,a,lg,g] = l.split('|'); return {t, a, lg, g:g.split(' ')}; });
+
+const TAGS = {
+  base:['ootd','outfitoftheday','whatiwore','styleinspo','instafashion','fashionreels'],
+  saree:['saree','sareelove','sareelovers','sareefashion','sareenotsorry','handloomsaree','indianwear'],
+  lehenga:['lehenga','lehengalove','lehengacholi','ethnicwear','indianwear','bridesmaid'],
+  kurti:['kurti','kurtilove','suitlove','salwarsuit','ethnicwear','desivibes'],
+  indo:['indowestern','fusionwear','ethnicfusion','desigirl'],
+  dress:['dress','partydress','dresslove','girlsnight'],
+  casual:['casualstyle','everydaystyle','denim','streetstyle'],
+  coord:['coordset','matchingset','coords','coordsets'],
+  formal:['officewear','workwear','workwearstyle','corporatestyle'],
+  gym:['gymwear','athleisure','workoutfit','fitnessgirl'],
+  beach:['beachoutfit','resortwear','beachvibes','travelstyle'],
+  wedding:['weddingguest','shaadiseason','weddingvibes','indianwedding'],
+  festival:['festivelook','festivevibes','diwalilook','navratri','garbanight'],
+  party:['partylook','nightout','partywear'],
+  date:['datenight','datenightoutfit'],
+  office:['officelook','mondaystyle'],
+  college:['collegestyle','campusstyle'],
+  vacation:['vacationmode','vacationvibes','holidaystyle'],
+  everyday:['dailylook','simplestyle'],
+  red:['redoutfit','ladyinred'], pink:['pinkoutfit','pinklover'], black:['allblack','blackoutfit'], white:['allwhite','whiteoutfit'], pastel:['pastelvibes','pastels'], blue:['blueoutfit'], green:['greenoutfit'], yellow:['yellowoutfit'], purple:['purpleoutfit'], gold:['sequins','goldenlook'], multi:['colourful','colorpop'],
+  elegant:['elegantstyle','classy'], bold:['boldandbeautiful','confidence'], cute:['cuteoutfit','girly'], desi:['desigirl','desistyle'], minimal:['minimalstyle','lessismore'], boss:['bosslady','powerdressing']
+};
+
+let st = {outfit:'saree', occ:'festival', color:'pink', vibe:'elegant', lang:'en', song:'all', seed:1, cap:null, off:new Set(), photo:null};
+try{ const s = JSON.parse(localStorage.getItem('captionista')||'null'); if(s) for(const k of ['outfit','occ','color','vibe','lang','song']) if(s[k]!==undefined) st[k] = s[k]; }catch(_){}
+const remember = () => { try{ localStorage.setItem('captionista', JSON.stringify({outfit:st.outfit,occ:st.occ,color:st.color,vibe:st.vibe,lang:st.lang,song:st.song})); }catch(_){} };
+
+function toast(m){ const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove('on'), 2400); }
+function rng(seed){ return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const colorName = () => (COLORS.find(c=>c[0]===st.color)||[])[1] || '';
+const fill = t => t.replace('{color}', colorName().toLowerCase()).replace('{Color}', colorName());
+
+function score(g){
+  return (g.includes(st.outfit)?3:0) + (g.includes(st.occ)?2:0) + (g.includes(st.vibe)?2:0) + (g.includes(st.color)?2:0) + (g.includes('any')?0.6:0);
+}
+function pick(list, n, extra){
+  const r = rng(st.seed*7919 + list.length);
+  return list.map(x => ({x, s: score(x.g) + (extra ? extra(x) : 0) + r()*0.9}))
+    .filter(o => o.s >= 1.6).sort((a,b) => b.s-a.s).slice(0, n).map(o => o.x);
+}
+function captions(){
+  const pool = CAPS.filter(c => !(c.g.includes('c') && (!st.color || st.color==='multi')) && !(st.lang==='en' && c.g.includes('hi')));
+  let out = pick(pool, 6, c => st.lang==='hi' && c.g.includes('hi') ? 1.2 : 0);
+  if(out.length < 6) out = out.concat(pool.filter(c => c.g.includes('any') && !out.includes(c)).slice(0, 6-out.length));
+  return out;
+}
+function songs(){
+  const pool = SONGS.filter(s => st.song==='all' || s.lg===st.song);
+  const desi = ['saree','lehenga','kurti','indo','wedding','festival','desi'];
+  return pick(pool, 6, s => st.song==='all' && s.lg!=='en' && (desi.includes(st.outfit) || desi.includes(st.occ)) ? 0.8 : 0);
+}
+function hashtags(){
+  const out = [];
+  for(const k of [st.outfit, st.occ, st.color, st.vibe, 'base']) for(const t of TAGS[k]||[]) if(!out.includes(t)) out.push(t);
+  return out.slice(0, 28);
+}
+
+function chips(el, list, key){
+  el.innerHTML = list.map(([v,l]) => `<button class="chip" data-v="${v}" aria-pressed="${st[key]===v}">${l}</button>`).join('');
+  el.onclick = e => { const b = e.target.closest('.chip'); if(!b) return; st[key] = st[key]===b.dataset.v && key!=='lang' && key!=='song' ? null : b.dataset.v; st.cap = null; st.off.clear(); remember(); render(); };
+}
+function swatches(){
+  const el = $('#cColor');
+  el.innerHTML = COLORS.map(([v,l,c]) => `<button class="sw" data-v="${v}" aria-label="${l}" title="${l}" aria-pressed="${st.color===v}" style="background:${c}"></button>`).join('');
+  el.onclick = e => { const b = e.target.closest('.sw'); if(!b) return; st.color = st.color===b.dataset.v ? null : b.dataset.v; st.cap = null; st.off.clear(); remember(); render(); };
+}
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function shot(){
+  const el = $('#shot');
+  if(st.photo){ el.innerHTML = `<img src="${st.photo}" alt="Your outfit">`; return; }
+  const c = (COLORS.find(x=>x[0]===st.color)||[0,0,'#d9a3b8'])[2], solid = c.startsWith('#') ? c : '#d9a3b8';
+  el.innerHTML = `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-label="Outfit illustration">
+    <defs><linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9f1"/><stop offset="1" stop-color="#f6c9d9"/></linearGradient>
+    <linearGradient id="dG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${solid}"/><stop offset="1" stop-color="${solid}" stop-opacity=".78"/></linearGradient></defs>
+    <rect width="400" height="500" fill="url(#bgG)"/><circle cx="320" cy="90" r="60" fill="#fff" opacity=".45"/>
+    <rect x="0" y="420" width="400" height="80" fill="#6d1a3f" opacity=".12"/>
+    <path d="M200 46a14 14 0 1 1 14 14c-8 0-14 5-14 12v8" fill="none" stroke="#6d1a3f" stroke-width="5" stroke-linecap="round"/>
+    <path d="M120 112l80-32 80 32" fill="none" stroke="#6d1a3f" stroke-width="6" stroke-linecap="round"/>
+    <path d="M165 104c10 22 60 22 70 0l22 8-10 70c46 70 70 150 78 228H75c8-78 32-158 78-228l-10-70z" fill="url(#dG)" stroke="rgba(0,0,0,.12)" stroke-width="2"/>
+    <path d="M153 182c30 14 64 14 94 0" stroke="#f2a516" stroke-width="7" fill="none"/>
+    <path d="M110 330c60 16 120 16 180 0M90 380c70 18 150 18 220 0" stroke="#fff" stroke-opacity=".35" stroke-width="4" fill="none"/>
+    <text x="200" y="465" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="17" fill="#6d1a3f">Add your photo to see it here</text></svg>`;
+}
+
+function render(){
+  chips($('#cOutfit'), OUTFITS, 'outfit'); chips($('#cOcc'), OCCS, 'occ'); chips($('#cVibe'), VIBES, 'vibe'); chips($('#cLang'), LANGS, 'lang'); chips($('#cSong'), SLANGS, 'song'); swatches();
+  const cs = captions();
+  if(!st.cap || !cs.includes(st.cap)) st.cap = cs[0] || null;
+  $('#caps').innerHTML = cs.map((c,i) => `<div class="cap" role="button" tabindex="0" data-i="${i}" aria-pressed="${c===st.cap}"><span>${esc(fill(c.t))}</span><button class="cp" data-i="${i}">Copy</button></div>`).join('') || '<p class="note">Pick an outfit to see captions.</p>';
+  $('#caps').onclick = e => {
+    const i = +(e.target.closest('[data-i]')?.dataset.i); if(isNaN(i)) return;
+    if(e.target.classList.contains('cp')) return copy(fill(cs[i].t), 'Caption copied');
+    st.cap = cs[i]; render();
+  };
+  $('#caps').onkeydown = e => { if((e.key==='Enter'||e.key===' ') && e.target.classList.contains('cap')){ e.preventDefault(); e.target.click(); } };
+  const tg = hashtags(), on = tg.filter(t => !st.off.has(t));
+  $('#tags').innerHTML = tg.map(t => `<button class="tag" data-t="${t}" aria-pressed="${!st.off.has(t)}">#${t}</button>`).join('');
+  $('#tags').onclick = e => { const b = e.target.closest('.tag'); if(!b) return; st.off.has(b.dataset.t) ? st.off.delete(b.dataset.t) : st.off.add(b.dataset.t); render(); };
+  $('#tCount').textContent = `${on.length} selected`;
+  const ss = songs();
+  $('#songs').innerHTML = ss.map(s => { const q = encodeURIComponent(s.t+' '+s.a); return `<li><span class="disc"></span><span class="t"><b>${esc(s.t)}</b><small>${esc(s.a)}</small></span><a href="https://open.spotify.com/search/${q}" target="_blank" rel="noopener">Spotify</a><a href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">YouTube</a></li>`; }).join('') || '<li><span class="t">No songs match. Try "All".</span></li>';
+  $('#pMusic').textContent = ss[0] ? `${ss[0].t} · ${ss[0].a.split(',')[0]}` : 'Original audio';
+  $('#pCap').textContent = st.cap ? fill(st.cap.t) : '';
+  $('#pTags').textContent = on.slice(0, 8).map(t=>'#'+t).join(' ') + (on.length > 8 ? ' …' : '');
+  shot();
+}
+async function copy(text, msg){
+  try{ await navigator.clipboard.writeText(text); toast(msg); }
+  catch(_){
+    const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.append(ta); ta.select();
+    let ok = false; try{ ok = document.execCommand('copy'); }catch(__){} ta.remove();
+    toast(ok ? msg : "Couldn't copy here. Press and hold the text to copy it.");
+  }
+}
+const tagText = () => hashtags().filter(t=>!st.off.has(t)).map(t=>'#'+t).join(' ');
+$('#copyTags').onclick = () => copy(tagText(), 'Hashtags copied');
+$('#copyAll').onclick = () => copy((st.cap ? fill(st.cap.t) : '') + '\n.\n.\n.\n' + tagText(), 'Caption and hashtags copied');
+$('#more').onclick = () => { st.seed++; st.cap = null; render(); };
+
+function classify(r,g,b){
+  const mx = Math.max(r,g,b)/255, mn = Math.min(r,g,b)/255, l = (mx+mn)/2, d = mx-mn;
+  const s = d === 0 ? 0 : d/(1-Math.abs(2*l-1));
+  let h = 0;
+  if(d){ if(mx===r/255) h = 60*(((g-b)/255/d)%6); else if(mx===g/255) h = 60*((b-r)/255/d+2); else h = 60*((r-g)/255/d+4); }
+  if(h < 0) h += 360;
+  if(l < 0.16) return ['black',1];
+  if(s < 0.14) return l > 0.62 ? ['white',0.8] : ['black',0.8];
+  if(l > 0.78) return ['pastel',0.9];
+  if(h >= 15 && h < 42) return s < 0.55 && l > 0.35 ? ['skin',0.25] : ['gold',0.9];
+  if(h >= 42 && h < 68) return ['yellow',1];
+  if(h >= 68 && h < 170) return ['green',1];
+  if(h >= 170 && h < 255) return ['blue',1];
+  if(h >= 255 && h < 295) return ['purple',1];
+  if(h >= 295 && h < 340) return ['pink',1];
+  return l > 0.6 ? ['pink',1] : ['red',1];
+}
+$('#photo').onchange = e => {
+  const f = e.target.files[0]; if(!f) return;
+  const url = URL.createObjectURL(f), img = new Image();
+  img.onload = () => {
+    st.photo = url; $('#thumb').src = url;
+    const c = document.createElement('canvas'), W = 80, H = Math.round(80*img.height/img.width) || 100;
+    c.width = W; c.height = H; const ctx = c.getContext('2d'); ctx.drawImage(img, 0, 0, W, H);
+    const d = ctx.getImageData(Math.round(W*0.2), Math.round(H*0.25), Math.round(W*0.6), Math.round(H*0.6)).data, tally = {};
+    for(let i=0;i<d.length;i+=4){ const [k,w] = classify(d[i],d[i+1],d[i+2]); tally[k] = (tally[k]||0) + w; }
+    delete tally.skin;
+    const top = Object.entries(tally).sort((a,b)=>b[1]-a[1]), total = top.reduce((a,b)=>a+b[1],0);
+    if(top.length){
+      st.color = top.length > 2 && top[0][1] < total*0.34 ? 'multi' : top[0][0];
+      const det = $('#det'); det.hidden = false; det.textContent = `We think your outfit is ${colorName().toLowerCase()}. Tap another colour if that's wrong.`;
+    }
+    st.cap = null; st.off.clear(); remember(); render();
+  };
+  img.onerror = () => toast("Couldn't read that photo. Try a JPG or PNG.");
+  img.src = url;
+};
+render();
+}
+</script>
+</body>
+</html>
